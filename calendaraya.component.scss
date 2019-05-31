@@ -1,12 +1,13 @@
 .wrapper-calendar{
     position: fixed;
-    top:56px;
+    top:0;
     left:0;
     width:100%;
     min-height: 100vh;
     height: auto;
     background:rgba(#000,.75);
     padding-top:45px;
+    z-index: 9999;
     // display: none;
     .calendar{  
         width:100%;
@@ -57,7 +58,7 @@
                     font-weight: bold;
                 }
                 &.disabled{
-                    background:#DDD;
+                    background:#EFEFEF;
                 }
                 &:hover,&.active{
                     background:#f39e3b;

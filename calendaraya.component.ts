@@ -76,7 +76,7 @@ export class CalendarayaComponent implements OnChanges {
       await this.initWeekDays(current).then(res => calendar.push(res))
       count = count + 7;
       
-      if(calendar[0][0].day < 28)
+      if(calendar[0][0].day < 28 && calendar[0][0].day != 1 )
           rowsCalendar = 6
 
     }
@@ -120,6 +120,8 @@ export class CalendarayaComponent implements OnChanges {
 
 
   selectDay(date) {
+    const currentDate = new Date(date.time);
+    this.currentDate = currentDate;
     this.selectDate.emit({ time: date.time, date: date.dateFormat });
     this.renderCalendar();
   }
