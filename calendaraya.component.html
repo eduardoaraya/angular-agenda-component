@@ -1,0 +1,27 @@
+<ion-item *ngIf="showLabel">
+  <ion-icon name="calendar"></ion-icon>&nbsp;
+  <ion-label>{{label}}</ion-label>
+</ion-item>
+<div class="wrapper-calendar " [ngClass]="{'modal-effect':showModal}">
+  <div class="calendar shadow">
+    <div class="input">
+      <ion-icon name="arrow-dropleft" class="left" (click)="prev(currentDate)"></ion-icon>
+      <span class="label">{{ month[currentDate.getMonth() ]}} / {{currentDate.getFullYear()}}</span>
+      <ion-icon name="arrow-dropright" class="right" (click)="next(currentDate)"></ion-icon>
+    </div>
+    <tr class="weekDays">
+      <td>D</td>
+      <td>S</td>
+      <td>T</td>
+      <td>Q</td>
+      <td>Q</td>
+      <td>S</td>
+      <td>S</td>
+    </tr> 
+    <tr *ngFor="let week of calendar" class="week">
+      <td *ngFor="let day of week" class="day"
+        [ngClass]="{'active':day.selected , 'disabled':day.disabled, 'selectedError':day.selectedError}"
+        (click)="selectDay(day)">{{day.day}}</td>
+    </tr>
+  </div>
+</div>

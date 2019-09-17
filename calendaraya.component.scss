@@ -1,0 +1,81 @@
+.wrapper-calendar{
+    
+    position: fixed;
+    width:100%;
+    min-height: 100vh;
+    height: auto;
+    z-index: 9999;
+    // display: none;
+    .calendar{  
+        width:100%;
+        height: auto;
+        background:#FFF;
+        margin:0 auto;
+        border-radius: 5px;
+        padding:10px;
+        // display: none;
+        .weekDays{
+            td{
+                text-align: center;
+                width: 60px;
+                color:#C0C0C0;
+                font-size:.65em;
+                padding:10px;
+            }
+        }
+        .input{
+            padding:10px;
+            color:#666;
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            span{
+                display: block;
+            }
+            ion-icons{
+                font-size:1.5em;
+            }
+        }
+        .week{
+            margin:0 auto;
+            width:100%;
+            .day{
+                padding:10px;
+                width:60px;
+                box-sizing: border-box;
+                text-align: center;
+                color:#696969;
+                font-size:.75em;
+                // border-radius: 50%;
+                &.active{
+                    background:#009ae8 !important;
+                    color:#FFF;
+                    box-shadow: 0px 5px 10px rgba(134, 202, 236, 0.58);
+                    font-weight: bold;
+                }
+                &.disabled{
+                    background:#EFEFEF;
+                }
+                &.selectedError{
+                    box-shadow: inset 0px 0px 10px 4px rgba(208, 81, 81, 0.5);;
+                    font-weight: bold;
+                }
+                &:hover,&.active{
+                    background:#f39e3b;
+                    color:#FFF;
+                }
+                
+            }
+        }
+    }   
+}
+
+.modal-effect{
+    background: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    padding-top: 45px;
+    .calendar{
+        max-width:300px;
+    }
+}
