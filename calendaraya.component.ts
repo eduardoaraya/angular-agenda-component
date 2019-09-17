@@ -43,7 +43,7 @@ export class CalendarayaComponent implements OnChanges {
 					day: any = now.getDate(),
 					position = now.getDay() - index,
 					week_day = this.nameWeekDays[index]
-				day = new Date(now.setDate(day - position));
+					day = new Date(now.setDate(day - position));
 
 				return {
 					week_day,
@@ -52,7 +52,7 @@ export class CalendarayaComponent implements OnChanges {
 					time: day.getTime(),
 					selected: ( (day.toDateString() == this.currentDate.toDateString()) &&  this.weeksOn[index] != 0) ? true : false,
 					selectedError: ( (day.toDateString() == this.currentDate.toDateString()) && this.weeksOn[index] == 0) ? true : false,
-					disabled: this.weeksOn[index] ? false : true
+					disabled: ( (this.weeksOn[index] != 0 ) && ( day.getTime() > currentNow.getTime() ) ) ? false : true
 				};
 			})
 
