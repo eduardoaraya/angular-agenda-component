@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
 export class CalendarayaComponent implements OnChanges {
 
 
-	@Input() currentDate: Date;
+	@Input() currentDate: Date = new Date;
 	@Input() weeksOn:any = [0,0,0,0,0,0,0];
 	@Input() label:string = 'Calendário';
 	@Input() showLabel:boolean = true;
