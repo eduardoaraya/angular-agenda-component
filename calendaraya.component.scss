@@ -1,17 +1,13 @@
 .wrapper-calendar{
+    
     position: fixed;
-    top:0;
-    left:0;
     width:100%;
     min-height: 100vh;
     height: auto;
-    background:rgba(#000,.75);
-    padding-top:45px;
     z-index: 9999;
     // display: none;
     .calendar{  
         width:100%;
-        max-width:300px;
         height: auto;
         background:#FFF;
         margin:0 auto;
@@ -54,11 +50,15 @@
                 &.active{
                     background:#009ae8 !important;
                     color:#FFF;
-                    box-shadow: 0px 5px 10px rgba(#666,.5);
+                    box-shadow: 0px 5px 10px rgba(134, 202, 236, 0.58);
                     font-weight: bold;
                 }
                 &.disabled{
                     background:#EFEFEF;
+                }
+                &.selectedError{
+                    box-shadow: inset 0px 0px 10px 4px rgba(208, 81, 81, 0.5);;
+                    font-weight: bold;
                 }
                 &:hover,&.active{
                     background:#f39e3b;
@@ -67,4 +67,14 @@
             }
         }
     }   
+}
+
+.modal-effect{
+    background: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    padding-top: 45px;
+    .calendar{
+        max-width:300px;
+    }
 }
